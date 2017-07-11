@@ -19,7 +19,6 @@
             margin-bottom: 10px;
             width: 250px;
             height: 200px;
-            border: 1px solid;
         }
         
         .box {
@@ -142,7 +141,9 @@
         function getPictures() {
             $('.image-wrap>img').each(function(index, element) {
                 if (isVisible($(element)) && !($(element).attr('appeared'))) {
-                    $(element).attr('appeared', 'appeared').attr('src', $(element).attr('data-src'))
+                    setTimeout(function() {
+                        $(element).attr('appeared', 'appeared').attr('src', $(element).attr('data-src'))
+                    }, 500);
                 }
             })
         }
